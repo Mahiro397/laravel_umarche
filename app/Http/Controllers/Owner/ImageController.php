@@ -133,20 +133,20 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        $image = Image::findOFail($id);
-         $filepath = 'public/products'. $image->filename;
+        $image = Image::findOrFail($id);
+        $filePath = 'public/products/' . $image->filename;
 
         
 
-        if(Storage::exists($filepath)){
+        if(Storage::exists($filePath)){
             Storage::delete($filePath);
         }
 
         Image::findOrFail($id)->delete();
 
         return redirect()
-        ->route('owner.image.index')
-        ->with(['message' => '画像をを削除しました。',
+        ->route('owner.images.index')
+        ->with(['message' => '画像を削除しました。',
         'status' => 'alert']);
     }
 }
