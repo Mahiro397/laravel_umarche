@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Owner;
-use App\Models\product;
+use App\Models\Product;
 
 class Shop extends Model
 {
@@ -16,7 +16,7 @@ class Shop extends Model
         'name',
         'information',
         'filename',
-        'is_selling',
+        'is_selling'
     ];
 
     public function owner()
@@ -26,6 +26,7 @@ class Shop extends Model
 
     public function product()
     {
-        return $this->hasMany(Peoduct::class);
+        return $this->hasMany(Product::class);
     }
+
 }
