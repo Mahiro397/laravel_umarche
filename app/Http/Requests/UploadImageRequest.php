@@ -29,12 +29,12 @@ class UploadImageRequest extends FormRequest
         ];
     }
 
-    public function messages() 
-    { 
-         return [ 
-            'image' => '指定されたファイルが画像ではありません。', 
-            'mines' => '指定された拡張子（jpg/jpeg/png）ではありません。', 
-            'max' => 'ファイルサイズは2MB以内にしてください。', 
-            ]; 
-        }
+    public function messages()
+    {
+    return [
+      'image' => '指定されたファイルが画像ではありません。',
+      'mines' => '指定された拡張子（jpg/jpeg/png）ではありません。',
+      'max' => 'ファイルサイズは2MB以内にしてください。',
+      ];
+    }
 }
